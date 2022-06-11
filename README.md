@@ -1,4 +1,4 @@
-# football
+# NOTE APP
 
 A new Flutter project.
 
