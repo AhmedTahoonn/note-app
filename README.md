@@ -1,7 +1,7 @@
 #Note-App
 <img src="https://user-images.githubusercontent.com/101335124/176663864-a821a1a4-854d-46ea-8575-292e0d313c1d.jpeg" width=280px% height=600px%>
-<img src="https://user-images.githubusercontent.com/101335124/176664633-29ac11b8-1cb9-40ba-a40b-0223cebce2d6.jpg" width=280px% height=600px%>
-<img src="https://user-images.githubusercontent.com/101335124/161466734-4d1d31df-8cb2-4461-a8b0-f15a2497b92a.png" width=280px% height=600px%>
+<img src="https://user-images.githubusercontent.com/101335124/176665116-caad7e73-57bd-46cc-a090-6ce8481a2e21.jpeg" width=280px% height=600px%>
+<img src="hhttps://user-images.githubusercontent.com/101335124/176665246-47b239a9-4d33-4abc-a361-7f2aeeb3fb78.jpeg" width=280px% height=600px%>
 <img src="https://user-images.githubusercontent.com/101335124/161557934-49f1bc2a-bae0-4d1d-919d-1ad044554ceb.png" width=280px% height=600px%>
 <img src="https://user-images.githubusercontent.com/101335124/161557945-5f3b558a-f1b1-4bcb-994e-4052983c75bd.png" width=280px% height=600px%>
 <img src="https://user-images.githubusercontent.com/101335124/161468026-8bbb3e56-5f0b-4d78-807c-7417233239ee.png" width=280px% height=600px%>
