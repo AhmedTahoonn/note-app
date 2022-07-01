@@ -1,4 +1,4 @@
-#Note-App
+Note-App
 
 <img src="https://user-images.githubusercontent.com/101335124/176663864-a821a1a4-854d-46ea-8575-292e0d313c1d.jpeg" width=280px% height=600px%>
 <img src="https://user-images.githubusercontent.com/101335124/176665116-caad7e73-57bd-46cc-a090-6ce8481a2e21.jpeg" width=280px% height=600px%>
