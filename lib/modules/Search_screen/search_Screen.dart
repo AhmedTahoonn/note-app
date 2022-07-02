@@ -114,9 +114,10 @@ class SearchScreen extends StatelessWidget {
                 fallback: (context)=>Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children:
                     [
-                      Image(image: AssetImage('assets/images/note4.png'),width: 100,height: 90,),
+                      Image(image: AssetImage('assets/images/search.png'),width: 110,height: 130,),
                       SizedBox(
                         height: 10,
                       ),

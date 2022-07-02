@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:football/style/icon_broken.dart';
 import 'package:intl/intl.dart';
-
 import '../../provider/cuibt.dart';
 import '../../provider/states.dart';
 

@@ -74,120 +74,125 @@ class _AddNewNoteState extends State<AddNewNote> {
               ],
 
             ),
-            bottomSheet: Container(
-              color:Note_Cubit.get(context).isDark ?Colors.black:Colors.white,
-              height: 60,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 12.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children:
-                  [
-                    Container(
-                      height: .5,
-                      width:double.infinity,
-                      color: Colors.grey,
+            
+            body: Column(
+              children:
+              [
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 10,left: 10),
+                    child: Column(
+                      children: [
 
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    DropdownButton<dynamic>(items:type.map((Item type) => DropdownMenuItem(child:Row(
-                      children:
-                      [
-                        type.icon,
-                        SizedBox(width: 10,),
-                        Text("${type.name}",style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontStyle: FontStyle.italic,
-                          color: Colors.grey
-                        ),)
+                        TextFormField(
+                          controller: dateController,
+                          enabled:false ,
+                          style: TextStyle(
+                            fontSize: 17,
+                            color: Colors.grey,
+                            fontWeight: FontWeight.bold
+                          ),
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: '${DateFormat.yMMMMd().format(DateTime.now())}',
+                            hintStyle: TextStyle(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20
+                            ),
+
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+
+                        TextFormField(
+                          onChanged: (value){
+                            Note_Cubit.get(context).changeDone(titleController.text,noteController.text);
+
+                          },
+                          controller: titleController,
+                          style:Theme.of(context).textTheme.bodyText1,
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: 'Title',
+                            hintStyle: TextStyle(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20
+                            ),
+
+                          ),
+                        ),
+
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Expanded(
+                          child: TextFormField(
+                            maxLines:null,
+                            style:Theme.of(context).textTheme.bodyText1,
+                            controller: noteController,
+                            onChanged: (value){
+                              Note_Cubit.get(context).changeDone(titleController.text,noteController.text);
+                            },
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: 'Note something down',
+                              hintStyle: TextStyle(
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 15
+                              ),
+
+                            ),
+
+                          ),
+                        ),
+                        Container(
+                          color:Note_Cubit.get(context).isDark ?Colors.black:Colors.grey[200],
+                          height: 60,
+                          width: double.infinity,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children:
+                            [
+                              Container(
+                                height: .4,
+                                width:double.infinity,
+                                color: Colors.grey,
+
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              DropdownButton<dynamic>(items:type.map((Item type) => DropdownMenuItem(child:Row(
+                                children:
+                                [
+                                  type.icon,
+                                  SizedBox(width: 10,),
+                                  Text("${type.name}",style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontStyle: FontStyle.italic,
+                                      color: Colors.grey
+                                  ),)
+                                ],
+                              ),value: type.name,)).toList(), onChanged:(val){
+                                setState(() {
+                                  selected=val;
+                                  // print(selected);
+                                });
+                              },value: selected,),
+                            ],
+                          ),
+                        ),
                       ],
-                    ),value: type.name,)).toList(), onChanged:(val){
-                      setState(() {
-                        selected=val;
-                       // print(selected);
-                      });
-                    },value: selected,),
-                  ],
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            body: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  children:
-                  [
-
-                    TextFormField(
-                      controller: dateController,
-                      enabled:false ,
-                      style: TextStyle(
-                        fontSize: 17,
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold
-                      ),
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: '${DateFormat.yMMMMd().format(DateTime.now())}',
-                        hintStyle: TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20
-                        ),
-
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-
-                    TextFormField(
-                      onChanged: (value){
-                        Note_Cubit.get(context).changeDone(titleController.text,noteController.text);
-
-                      },
-                      controller: titleController,
-                      style:Theme.of(context).textTheme.bodyText1,
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: 'Title',
-                        hintStyle: TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 20
-                        ),
-
-                      ),
-                    ),
-
-                    SizedBox(
-                      height: 20,
-                    ),
-                    TextFormField(
-                      maxLines:null,
-                      style:Theme.of(context).textTheme.bodyText1,
-                      controller: noteController,
-                      onChanged: (value){
-                        Note_Cubit.get(context).changeDone(titleController.text,noteController.text);
-                      },
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: 'Note something down',
-                        hintStyle: TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 15
-                        ),
-
-                      ),
-
-                    ),
-                  ],
-                ),
-              ),
+              ],
             ),
           ),
         );

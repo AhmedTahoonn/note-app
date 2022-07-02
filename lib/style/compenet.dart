@@ -34,8 +34,10 @@ class AppStyle {
     scaffoldBackgroundColor: Colors.grey[200],
     appBarTheme: AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarColor: Colors.black,
+        statusBarColor: Colors.grey[200],
+        statusBarIconBrightness: Brightness.dark,
         statusBarBrightness: Brightness.light,
+
       ),
       backgroundColor: Colors.grey[200],
       elevation: 0.0,
@@ -92,6 +94,7 @@ class AppStyle {
     appBarTheme: AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.black,
+        statusBarIconBrightness: Brightness.light,
         statusBarBrightness: Brightness.dark,
       ),
       backgroundColor: Colors.black,

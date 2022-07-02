@@ -179,13 +179,18 @@ class Home_Screen extends StatelessWidget {
                  mainAxisAlignment: MainAxisAlignment.center,
 
                 children: [
-                  Image(image: AssetImage('assets/images/note4.png'),width: 150,height: 150,fit: BoxFit.cover,),
+                  Image(image: AssetImage('assets/images/note11.png'),width: 160,height: 150,),
                   SizedBox(
-                    height: 10,
+                    height: 15,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left:20.0),
-                    child: Text('Your Note is Empty',style: TextStyle(fontWeight: FontWeight.bold,color: Note_Cubit.get(context).isDark?Colors.white:Colors.black),),
+                    padding: const EdgeInsets.only(left: 20.0),
+                    child: Text('Your Note is Empty.... ',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontStyle: FontStyle.italic,
+                      ),
+                    ),
                   ),
 
                 ],
@@ -286,18 +291,23 @@ class Home_Screen extends StatelessWidget {
                               decoration: BoxDecoration(
 
                                   borderRadius: BorderRadius.circular(20.0),
-                                  color: Colors.white
+                                color:Note_Cubit.get(context).isDark?Colors.black12: Colors.white,
                               ),
                               child:ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
 
-                                child: MaterialButton(
+                                child: IconButton(
                                   highlightColor: Colors.white,
                                   onPressed: () {
                                     Note_Cubit.get(context).deleteDatabase(id: model['id']);
                                   },
-                                  child: Text(
+                                  icon: Text(
                                     ' Delete',
+                                    style: TextStyle(
+                                      color:Note_Cubit.get(context).isDark?Colors.white: Colors.black,
+
+                                    ),
+
 
                                   ),
                                 ),
@@ -309,20 +319,24 @@ class Home_Screen extends StatelessWidget {
                               decoration: BoxDecoration(
 
                                   borderRadius: BorderRadius.circular(20.0),
-                                  color: Colors.white
+                                color:Note_Cubit.get(context).isDark?Colors.black12: Colors.white,
                               ),
                               child:ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
 
-                                child: MaterialButton(
+                                child: IconButton(
                                   highlightColor: Colors.white,
 
                                   onPressed: () {
                                     Navigator.pop(context);
 
                                   },
-                                  child: Text(
+                                  icon: Text(
                                     ' Cancel',
+                                    style: TextStyle(
+                                      color:Note_Cubit.get(context).isDark?Colors.white: Colors.black,
+
+                                    ),
 
                                   ),
                                 ),
