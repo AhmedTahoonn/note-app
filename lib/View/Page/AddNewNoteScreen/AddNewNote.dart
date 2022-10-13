@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:football/style/icon_broken.dart';
 import 'package:intl/intl.dart';
 
-import '../../provider/cuibt.dart';
-import '../../provider/states.dart';
+import '../../../Constant/style/icon_broken.dart';
+import '../../../View_Model/Bloc/cuibt.dart';
+import '../../../View_Model/Bloc/states.dart';
+
 
 class Item
 {
@@ -48,7 +49,7 @@ class _AddNewNoteState extends State<AddNewNote> {
         return  SafeArea(
           child: Scaffold(
             appBar: AppBar(
-              title: Text(
+              title: const Text(
                 'Note',
 
               ),
@@ -56,7 +57,7 @@ class _AddNewNoteState extends State<AddNewNote> {
                 onPressed: (){
                   Navigator.pop(context);
                 },
-                icon: Icon(IconBroken.Arrow___Left_2,),
+                icon: const Icon(IconBroken.Arrow___Left_2,),
               ),
               actions: [
                 Note_Cubit.get(context).done?IconButton(onPressed: (){
@@ -87,7 +88,7 @@ class _AddNewNoteState extends State<AddNewNote> {
                         TextFormField(
                           controller: dateController,
                           enabled:false ,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 17,
                             color: Colors.grey,
                             fontWeight: FontWeight.bold
@@ -95,7 +96,7 @@ class _AddNewNoteState extends State<AddNewNote> {
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText: '${DateFormat.yMMMMd().format(DateTime.now())}',
-                            hintStyle: TextStyle(
+                            hintStyle: const TextStyle(
                                 color: Colors.grey,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20
@@ -103,7 +104,7 @@ class _AddNewNoteState extends State<AddNewNote> {
 
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
 
@@ -114,7 +115,7 @@ class _AddNewNoteState extends State<AddNewNote> {
                           },
                           controller: titleController,
                           style:Theme.of(context).textTheme.bodyText1,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             border: InputBorder.none,
                             hintText: 'Title',
                             hintStyle: TextStyle(
@@ -126,7 +127,7 @@ class _AddNewNoteState extends State<AddNewNote> {
                           ),
                         ),
 
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         Expanded(
@@ -137,7 +138,7 @@ class _AddNewNoteState extends State<AddNewNote> {
                             onChanged: (value){
                               Note_Cubit.get(context).changeDone(titleController.text,noteController.text);
                             },
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               border: InputBorder.none,
                               hintText: 'Note something down',
                               hintStyle: TextStyle(
@@ -165,15 +166,15 @@ class _AddNewNoteState extends State<AddNewNote> {
                                 color: Colors.grey,
 
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5,
                               ),
                               DropdownButton<dynamic>(items:type.map((Item type) => DropdownMenuItem(child:Row(
                                 children:
                                 [
                                   type.icon,
-                                  SizedBox(width: 10,),
-                                  Text("${type.name}",style: TextStyle(
+                                  const SizedBox(width: 10,),
+                                  Text(type.name,style: const TextStyle(
                                       fontWeight: FontWeight.w600,
                                       fontStyle: FontStyle.italic,
                                       color: Colors.grey

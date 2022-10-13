@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:football/provider/states.dart';
+import 'package:football/View_Model/Bloc/states.dart';
 import 'package:sqflite/sqflite.dart';
 
 import '../network/local/cach.dart';
@@ -48,11 +49,15 @@ class Note_Cubit extends Cubit<NoteStates> {
       return await txn.rawInsert(
           'INSERT INTO tasks(title,date,task,type) VALUES("$title","$date","$task","$type")')
           .then((value) {
-        print('inserted successfully');
+        if (kDebugMode) {
+          print('inserted successfully');
+        }
         emit(AppInsertDatabaseState());
         getDataFromDatabase(database);
       }).catchError((error) {
-        print('error when inserted${error.toString()}');
+        if (kDebugMode) {
+          print('error when inserted${error.toString()}');
+        }
       });
     });
   }
@@ -65,7 +70,9 @@ class Note_Cubit extends Cubit<NoteStates> {
     database.rawQuery('SELECT * FROM tasks  ORDER BY date DESC').then((value) {
       newNote=value;
       emit(AppGetDataFromDatabaseState());
-      print(value.toString());
+      if (kDebugMode) {
+        print(value.toString());
+      }
     });
   }
 
@@ -154,7 +161,9 @@ class Note_Cubit extends Cubit<NoteStates> {
       search=value;
 
       emit(GetSearchSuccessState());
-      print(value.toString());
+      if (kDebugMode) {
+        print(value.toString());
+      }
     });
 
   }

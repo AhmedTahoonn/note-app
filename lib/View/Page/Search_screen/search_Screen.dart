@@ -2,9 +2,10 @@ import 'package:conditional_builder_rec/conditional_builder_rec.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:football/provider/cuibt.dart';
-import 'package:football/provider/states.dart';
-import '../../style/icon_broken.dart';
+
+import '../../../Constant/style/icon_broken.dart';
+import '../../../View_Model/Bloc/cuibt.dart';
+import '../../../View_Model/Bloc/states.dart';
 import '../Display what you wrote Screen/Display what you wrote.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -69,15 +70,15 @@ class SearchScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     GestureDetector(
                       onTap: () {},
                       child: Container(
-                        padding: EdgeInsets.all(5),
+                        padding: const EdgeInsets.all(5),
                         decoration: BoxDecoration(
-                          color: Color(0xFF2ecc71),
+                          color: const Color(0xFF2ecc71),
                           borderRadius: BorderRadius.circular(10),
                           boxShadow: [
                             BoxShadow(
@@ -85,22 +86,22 @@ class SearchScreen extends StatelessWidget {
                               spreadRadius: 1,
                               blurRadius: 1,
                               offset:
-                                  Offset(0, 1), // changes position of shadow
+                                  const Offset(0, 1), // changes position of shadow
                             ),
                           ],
                         ),
-                        child: Icon(Icons.filter_list_rounded,
+                        child: const Icon(Icons.filter_list_rounded,
                             color: Colors.white),
                       ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               ConditionalBuilderRec(
-                condition:Note_Cubit.get(context).search.length>0 ,
+                condition:Note_Cubit.get(context).search.isNotEmpty ,
                 builder: (context)=> Expanded(
                   child: Padding(
                     padding: const EdgeInsets.only(right: 10.0, left: 10.0),
@@ -116,7 +117,7 @@ class SearchScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children:
-                    [
+                    const [
                       Image(image: AssetImage('assets/images/search.png'),width: 110,height: 130,),
                       SizedBox(
                         height: 10,

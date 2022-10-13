@@ -1,9 +1,7 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
-import '../modules/home_layout/home_Screen.dart';
 /////////////////////////////////////////////////////////////////////////////
 ///style
 class AppStyle {
@@ -41,19 +39,19 @@ class AppStyle {
       ),
       backgroundColor: Colors.grey[200],
       elevation: 0.0,
-      titleTextStyle: TextStyle(
+      titleTextStyle: const TextStyle(
         color: Colors.black,
         fontSize: 20.0,
         fontWeight: FontWeight.bold,
       ),
-      iconTheme: IconThemeData(
+      iconTheme: const IconThemeData(
         color: Colors.black,
       ),
     ),
-    floatingActionButtonTheme: FloatingActionButtonThemeData(
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: Colors.blueGrey,
     ),
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.white,
       type: BottomNavigationBarType.fixed,
       selectedItemColor: Colors.blueGrey,
@@ -63,7 +61,7 @@ class AppStyle {
     bottomSheetTheme: BottomSheetThemeData(
       backgroundColor: Colors.white,
     ),
-    timePickerTheme: TimePickerThemeData(
+    timePickerTheme: const TimePickerThemeData(
       backgroundColor: Colors.white,
       dayPeriodColor: Colors.blueGrey,
       dayPeriodTextColor: Colors.white,
@@ -79,7 +77,7 @@ class AppStyle {
       helpTextStyle: TextStyle(
           color: Colors.blueGrey, fontWeight: FontWeight.bold, fontSize: 14),
     ),
-    textTheme: TextTheme(
+    textTheme: const TextTheme(
       bodyText1: TextStyle(
           fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black),
       bodyText2: TextStyle(
@@ -91,7 +89,7 @@ class AppStyle {
   static var dark = ThemeData(
     primarySwatch: Colors.grey,
     scaffoldBackgroundColor: Colors.black,
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.black,
         statusBarIconBrightness: Brightness.light,
@@ -121,14 +119,14 @@ class AppStyle {
       unselectedItemColor: Colors.grey,
       elevation: 20.0,
     ),
-    textTheme: TextTheme(
+    textTheme: const TextTheme(
         bodyText1: TextStyle(
             fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.white),
         bodyText2: TextStyle(
           fontSize: 14.0,
           color: Colors.grey,
         )),
-    tabBarTheme: TabBarTheme(
+    tabBarTheme: const TabBarTheme(
       labelColor: Colors.white,
       unselectedLabelColor: Colors.white,
     ),
@@ -136,25 +134,3 @@ class AppStyle {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-/// splash screen
-Widget splashScreen()=>AnimatedSplashScreen(
-  nextScreen:Home_Screen() ,
-  backgroundColor: Colors.white,
-  duration: 2500,
-  splash:Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    crossAxisAlignment: CrossAxisAlignment.center,
-    children: [
-
-      Image(image: AssetImage('assets/images/note7.png'),fit: BoxFit.cover,),
-      SizedBox(width: 5,),
-      Text('NOTE APP',style: TextStyle(
-          fontSize: 22,
-          fontWeight: FontWeight.bold,
-          fontStyle: FontStyle.italic
-      ),),
-    ],
-  ),
-
-
-);

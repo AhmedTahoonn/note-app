@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:football/style/icon_broken.dart';
 import 'package:intl/intl.dart';
-import '../../provider/cuibt.dart';
-import '../../provider/states.dart';
+
+import '../../../Constant/style/icon_broken.dart';
+import '../../../View_Model/Bloc/cuibt.dart';
+import '../../../View_Model/Bloc/states.dart';
 
 
 class Display extends StatelessWidget {
@@ -60,7 +61,7 @@ var newDateController=TextEditingController();
                   Note_Cubit.get(context).updateDatabase(  title: titleController.text, id: id,task: noteController.text,date: newDateController.text);
 
                 },
-               icon:Icon(Icons.done,color: Colors.green,),
+               icon:const Icon(Icons.done,color: Colors.green,),
                 )
               ],
 
@@ -75,13 +76,13 @@ var newDateController=TextEditingController();
                     TextFormField(
                       controller: dateController,
                       enabled: false,
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.grey,
                           fontSize: 20,
                           fontWeight: FontWeight.w500,
                       ),
 
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintStyle: TextStyle(
                             color: Colors.grey,
@@ -99,7 +100,7 @@ var newDateController=TextEditingController();
                       {
 
                       },
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Title',
                         border: InputBorder.none,
                         hintStyle: TextStyle(
@@ -111,7 +112,7 @@ var newDateController=TextEditingController();
                       ),
                     ),
 
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     TextFormField(
@@ -125,7 +126,7 @@ var newDateController=TextEditingController();
                       {
 
                       },
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
 
                         border: InputBorder.none,
                         hintText: 'Note something down',

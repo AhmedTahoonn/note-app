@@ -4,11 +4,11 @@ import 'package:conditional_builder_rec/conditional_builder_rec.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:football/provider/cuibt.dart';
-import 'package:football/provider/states.dart';
 
-import '../../style/icon_broken.dart';
-import '../../style/compenet.dart';
+import '../../../Constant/style/constant.dart';
+import '../../../Constant/style/icon_broken.dart';
+import '../../../View_Model/Bloc/cuibt.dart';
+import '../../../View_Model/Bloc/states.dart';
 import '../AddNewNoteScreen/AddNewNote.dart';
 import '../Display what you wrote Screen/Display what you wrote.dart';
 import '../Search_screen/search_Screen.dart';
@@ -241,7 +241,7 @@ class Home_Screen extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.end,
             //crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Text(model['type'],style: TextStyle(
+              Text(model['type'],style: const TextStyle(
                   fontStyle: FontStyle.italic,
                   fontWeight: FontWeight.bold,
                 color: Colors.blueGrey,
@@ -260,7 +260,7 @@ class Home_Screen extends StatelessWidget {
                 Expanded(
                   child: Text(
                     '${model['title']}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.black,
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -276,7 +276,7 @@ class Home_Screen extends StatelessWidget {
 
                       decoration: BoxDecoration(
                         color:Note_Cubit.get(context).isDark?Colors.black12: Colors.white,
-                        borderRadius: BorderRadius.only(topRight: Radius.circular(60),topLeft:Radius.circular(60) ,),
+                        borderRadius: const BorderRadius.only(topRight: Radius.circular(60),topLeft:Radius.circular(60) ,),
                       ),
                       height: 130,
                       width: double.infinity,
@@ -313,7 +313,7 @@ class Home_Screen extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 10,),
+                            const SizedBox(height: 10,),
                             Container(
                               width: 160,
                               decoration: BoxDecoration(
@@ -348,26 +348,26 @@ class Home_Screen extends StatelessWidget {
                       ),
                     ),
                   ));
-                }, icon: Icon(Icons.more_horiz,size: 18,))
+                }, icon: const Icon(Icons.more_horiz,size: 18,))
 
               ],
             ),
           ),
-          SizedBox(height: 5,),
+          const SizedBox(height: 5,),
           Text(
             '${model['date']}',
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.black45,
               fontSize: 13,
               fontWeight: FontWeight.w600,
             ),
           ),
-          SizedBox(height: 5,),
+          const SizedBox(height: 5,),
 
           Expanded(
             child: Text(
               '${model['task']}',
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.black,
                 fontSize: 15,
 
